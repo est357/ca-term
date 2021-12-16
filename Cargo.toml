@@ -1,0 +1,17 @@
+[package]
+name = "ca-term"
+version = "0.0.1"
+edition = "2018"
+description = "Elementary Cellular Automata for the terminal"
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/est357/ca-term"
+repository = "https://github.com/est357/ca-term"
+keywords = ["cli", "cellular automata", "cellular automaton", "rng", "ca","automata", "automaton"]
+categories = ["command-line-utilities"]
+
+
+[dependencies]
+exitcode = "1.1.2"
+clap = "2"
+rand = "0.8.0"
