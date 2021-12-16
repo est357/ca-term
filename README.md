@@ -1,6 +1,6 @@
 # Elementary CA generator for terminal
 
-![crates.io](https://img.shields.io/crates/v/ca-term.svg)(https://crates.io/crates/ca-term)
+[![crates.io](https://img.shields.io/crates/v/ca-term.svg)](https://crates.io/crates/ca-term)
 
 
 This is a cli tool that can show all elementary Cellular Automata on a text based terminal. More details about elementary cellular automata here: https://mathworld.wolfram.com/ElementaryCellularAutomaton.html.
