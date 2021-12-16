@@ -7,7 +7,7 @@ license = "Apache-2.0"
 readme = "README.md"
 homepage = "https://github.com/est357/ca-term"
 repository = "https://github.com/est357/ca-term"
-keywords = ["cli", "cellular", "automata", "automaton", "rng", "ca"]
+keywords = ["cli", "cellular", "automata", "automaton", "rng"]
 categories = ["command-line-utilities"]
 
 
