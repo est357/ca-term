@@ -1,6 +1,6 @@
 [package]
 name = "ca-term"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2018"
 description = "Elementary Cellular Automata for the terminal"
 license = "Apache-2.0"
