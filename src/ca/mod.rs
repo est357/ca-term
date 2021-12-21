@@ -29,7 +29,7 @@ impl CA {
     }
     /// Generates the new rows after applying the rule and displays them
     pub fn generate(&mut self) {
-        display::display(&self.row, self.display_character);
+        display::display(&self.row, self.display_character, display::RunState::Start);
         for _ in 0..self.generations {
             let last_row = self.row.clone();
             self.row.clear();
@@ -43,12 +43,17 @@ impl CA {
                 self.row.push(rez);
             }
 
-            display::display(&self.row, self.display_character);
+            display::display(
+                &self.row,
+                self.display_character,
+                display::RunState::Working,
+            );
 
             thread::sleep(time::Duration::from_micros(
                 self.interval_between_generations,
             ));
         }
+        display::display(&self.row, self.display_character, display::RunState::Stop);
     }
     /// Returns the next value of a cell based on its neighbors and the rule
     fn check_rule(&self, left: u8, center: u8, right: u8) -> u8 {
