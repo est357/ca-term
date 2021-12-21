@@ -1,4 +1,5 @@
 extern crate exitcode;
+extern crate term_size;
 use std::process::exit;
 
 extern crate clap;
@@ -6,6 +7,14 @@ use clap::{App, AppSettings, Arg};
 
 /// Processes CLI arguments using clap
 pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
+    // Get terminal width for default values of arguments width and initial_bit
+    let cols = match term_size::dimensions() {
+        Some((w, _)) => w,
+        None => 200,
+    };
+    let width_default = cols.to_string();
+    let initial_bit_default = (cols / 2).to_string();
+
     let app = App::new("ca-term")
         .setting(AppSettings::ArgRequiredElseHelp)
         .version("0.0.3")
@@ -13,10 +22,10 @@ pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
         .author("Author: est357")
         .args(&[
             Arg::with_name("width")
-                .help("Width of the screen.Number value < 256.")
+                .help("No of columns of the array, should match terminal width for best results. Number value.")
                 .short("w")
                 .long("width")
-                .default_value("200"),
+                .default_value(&width_default),
             Arg::with_name("generations")
                 .help("How many lines it should generate. Number value.")
                 .short("g")
@@ -36,7 +45,7 @@ pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
                 .help("Initial bit 1 position. Between 0 and width value. Number value.")
                 .short("b")
                 .long("init_bit")
-                .default_value("100"),
+                .default_value(&initial_bit_default),
             Arg::with_name("display_character")
                 .help("The character with which it will be drawn. Just 1 character.")
                 .short("c")
