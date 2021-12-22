@@ -13,7 +13,7 @@ It displays the CA on the terminal with whatever character you pass in ascii or 
 Help from the command itself is, I think, self-explanatory:
 
 ```
-ca-term 0.0.3
+ca-term 0.0.4
 Author: est357
 Description: Cellular automata for terminal
 
@@ -53,7 +53,7 @@ cargo install ca-term
 
 ### Misc
 
-By default it disables line wrap. Usual signals are handled but if you, for example, `kill -9` the process you will end up with unwrapped lines in the terminal.
+By default it disables line wrap. Usual signals are handled but if you, for example, `kill -9` the process, you will end up with unwrapped lines in the terminal.
 
 To disable/enable line wrap in your terminal do this:
 ```
