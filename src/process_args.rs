@@ -17,7 +17,7 @@ pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
 
     let app = App::new("ca-term")
         .setting(AppSettings::ArgRequiredElseHelp)
-        .version("0.0.3")
+        .version("0.0.4")
         .about("Description: Cellular automata for terminal")
         .author("Author: est357")
         .args(&[
