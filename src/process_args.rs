@@ -13,7 +13,7 @@ pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
         None => 200,
     };
     let width_default = cols.to_string();
-    let initial_bit_default = (cols / 2).to_string();
+    let init_bit_or_gen_default = (cols / 2).to_string();
 
     let app = App::new("ca-term")
         .setting(AppSettings::ArgRequiredElseHelp)
@@ -30,7 +30,7 @@ pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
                 .help("How many lines it should generate. Number value.")
                 .short("g")
                 .long("generations")
-                .default_value("100"),
+                .default_value(&init_bit_or_gen_default),
             Arg::with_name("rule")
                 .help("The CA rule number according to https://mathworld.wolfram.com/ElementaryCellularAutomaton.html. Number value.")
                 .short("r")
@@ -45,7 +45,7 @@ pub fn process_args() -> (u32, u32, u8, u64, u8, char) {
                 .help("Initial bit 1 position. Between 0 and width value. Number value.")
                 .short("b")
                 .long("init_bit")
-                .default_value(&initial_bit_default),
+                .default_value(&init_bit_or_gen_default),
             Arg::with_name("display_character")
                 .help("The character with which it will be drawn. Just 1 character.")
                 .short("c")
